@@ -1,0 +1,45 @@
+.field {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+.field > label {
+	width: 50%;
+	display: table-cell;
+	background: #EFEFEF;
+	border: solid #fff 2px;
+	padding: 3px;
+}
+.field > .c {
+	width: 50%;
+	display: table-cell;
+	background: #EFEFEF;
+	border: solid #fff 2px;
+	padding: 3px;
+}
+.field-label {
+	display: block;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.field-label > label {
+	width: 100%;
+	display: block;
+	border: none;
+	background: transparent;
+}
+.field-label > .c {
+	display: none;
+}
+
+.demo-wsurl {
+	background: #efefef;
+	padding: 16px;
+	margin: 16px 0;
+}
+
+.blq-typ h1 {
+	font-size: 2em;
+	line-height: 1.3;
+	margin: 1em 0;
+}
