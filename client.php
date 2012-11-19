@@ -137,6 +137,12 @@ class Barlesque
 		$this->options['blq_idcta_use_overlay'] = null;
 		$this->bools['blq_idcta_use_overlay'] = array(0, 1);
 
+		$this->options['blq_istats_linktracking'] = null;
+		$this->map['istats'] = 'blq_istats_linktracking';
+
+		$this->options['blq_version'] = null;
+		$this->map['version'] = 'blq_version';
+
 		/* Javascript and CSS */
 		$this->options['blq_css_framework'] = null;
 		$this->map['cssFramework'] = 'blq_css_framework';
