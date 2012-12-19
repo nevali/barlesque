@@ -56,6 +56,7 @@ class BarlesqueDemo extends BarlesquePage
 			'blq_idcta_policy' => '',
 			'blq_idcta_ptrt' => '',
 			'blq_idcta_use_overlay' => '',
+			'blq_version' => '/global/version',
 			),
 		'JavaScript and CSS' => array(
 			'blq_css_framework' => '/jsandcss/cssframework',
@@ -185,6 +186,7 @@ class BarlesqueDemo extends BarlesquePage
 	protected function assignTemplate()
 	{
 		$values = $this->form->values();
+		$this->blq->reset();
 		foreach($values as $k => $v)
 		{
 			if(strlen($v))
