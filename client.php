@@ -142,6 +142,7 @@ class Barlesque
 
 		$this->options['blq_version'] = null;
 		$this->map['version'] = 'blq_version';
+		$this->choices['blq_version'] = array('4');
 
 		/* Javascript and CSS */
 		$this->options['blq_css_framework'] = null;
@@ -305,6 +306,14 @@ class Barlesque
 		$this->options['identitystatusbar'] = null;
 		$this->bools['identitystatusbar'] = array('false', 'true');
 		
+	}
+
+	public function reset()
+	{
+		foreach($this->options as $k => $v)
+		{
+			$this->options[$k] = null;
+		}
 	}
 
 	protected function url()
