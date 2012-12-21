@@ -388,6 +388,13 @@ class Barlesque
 				$this->results[$k] = '';
 			}
 		}
+		if($this->options['blq_version'] == 4 && strlen($this->options['blq_link_prefix']))
+		{
+			foreach($this->results as $k => $fragment)
+			{
+				$this->results[$k] = preg_replace('!(\s+)href="/!', '\1href="' . $this->options['blq_link_prefix'] . '/', $fragment);
+			}
+		}
 	}
 
 	public function __get($name)
