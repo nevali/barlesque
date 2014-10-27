@@ -330,11 +330,21 @@ class Barlesque
 				$host = 'www.' . $this->environment . '.bbc.co.uk';
 			}
 		}
+		if(substr($this->path, 0, 1) != '/')
+		{
+			$this->path = '/' . $this->path;
+		}
+		$url = 'http://' . $host . $this->path . '?' . $this->query();
+		return $url;
+	}
+
+	protected function query()
+	{
 		$options = array();
 		foreach($this->options as $k => $v)
 		{
 			if($v === true)
-			{				
+			{
 				$v = isset($this->bools[$k]) ? $this->bools[$k][1] : 'yes';
 			}
 			else if($v === false)
@@ -347,13 +357,7 @@ class Barlesque
 			}
 			$options[$k] = $v;
 		}
-		if(substr($this->path, 0, 1) != '/')
-		{
-			$this->path = '/' . $this->path;
-		}
-		$url = 'http://' . $host . $this->path . '?' . http_build_query($options, null, '&');
-		
-		return $url;
+		return http_build_query($options, null, '&');
 	}
 
 	public function fetch()
@@ -414,6 +418,10 @@ class Barlesque
 		if($name == 'url')
 		{
 			return $this->url();
+		}
+		if($name == 'query')
+		{
+			return $this->query();
 		}
 		if(in_array($name, $this->keys))
 		{
