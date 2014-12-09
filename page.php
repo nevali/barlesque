@@ -26,7 +26,12 @@ class BarlesquePage extends Page
 	public function __construct()
 	{
 		parent::__construct();
-		$this->blq = new Barlesque();
+		$this->blq = $this->barlesque();
+	}
+
+	protected function barlesque()
+	{
+		return new Barlesque();
 	}
 
 	protected function assignTemplate()
