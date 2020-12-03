@@ -380,7 +380,11 @@ class Barlesque
 			return;
 		}
 		$this->results = array();
-		$root = simplexml_load_string($buf);
+		$root = @simplexml_load_string($buf);
+		if(!$root)
+		{
+			return;
+		}
 		foreach($this->keys as $k)
 		{
 			if(isset($root->{$k}))
